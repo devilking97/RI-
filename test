@@ -1,0 +1,39 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class test2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file=new File("C:\\Users\\aghil\\Desktop\\test.txt");
+		Scanner read_textfile = null;
+		 
+		   try {
+		       System.out.println ("START : read from test.txt");
+		       read_textfile = new Scanner (new FileInputStream(file));
+		 
+		   }catch (FileNotFoundException f){
+		       System.out.println("ERROR : test.txt not found");
+		   }
+		   // we just need to use \\Z as delimiter 
+		   /*read_textfile.useDelimiter(" "); 
+		  
+		    System.out.println(read_textfile.next()); */
+		 
+		   while (read_textfile.hasNextLine()){
+			   
+			   String line = read_textfile.nextLine();
+			   StringTokenizer s = new StringTokenizer(line, " ");
+			   System.out.println(line );
+			             
+			      while (s.hasMoreTokens()){
+			             
+			           System.out.println(s.nextToken());
+		             
+
+	}
+		   }
+	 }}
